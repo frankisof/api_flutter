@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'links',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'hackernews.urls'
@@ -82,12 +84,12 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'hackernews',
-        'USER': 'm',
-        'PASSWORD': 'adsoft',
-        'HOST': 'localhost',
-        'PORT': '5432',
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':   'hackernews',
+        'USER'    : 'diseño',
+        'PASSWORD': 'password',
+        'HOST'    : 'localhost',
+        'PORT'    : '5432',
     },
     'test': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -126,6 +128,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
+
 USE_I18N = True
 
 USE_L10N = True
@@ -141,11 +144,17 @@ STATIC_URL = '/static/'
 GRAPHENE = {
     'SCHEMA': 'hackernews.schema.schema',
     'MIDDLEWARE': [
-        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+     'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],
 }
 
 AUTHENTICATION_BACKENDS = [
     'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
+]
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:9000",
 ]
