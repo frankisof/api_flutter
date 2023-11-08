@@ -10,6 +10,6 @@ data:
  PROD_USER: ecaufylr
  PROD_PASSWORD: fzx5aCpIJq6YyjH1UkexJMUf3nOX1Ic6
  PROD_HOST: mahmud.db.elephantsql.com
- PROD_PORT: 5432
+ PROD_PORT: "5432"
 
 
