@@ -6,10 +6,10 @@ metadata:
    app: postgres
 data:
  PROD_SECRET_KEY: i-love-adsoftsito-dev
- PROD_DATABASE:  hackernews  
- PROD_USER: diseño
- PROD_PASSWORD: password
- PROD_HOST: localhost
- PROD_PORT: "5432"
+ PROD_DATABASE: ecaufylr  
+ PROD_USER: ecaufylr
+ PROD_PASSWORD: fzx5aCpIJq6YyjH1UkexJMUf3nOX1Ic6
+ PROD_HOST: mahmud.db.elephantsql.com
+ PROD_PORT: 5432
 
 
